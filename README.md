@@ -239,8 +239,8 @@ try {
 
 # Changelog
 
-- 2020/02/21 发布到npm，可以使用npm安装了，同时`browser-storage-apis`改名为`web-storage-apis`
+- **2020/02/21** `0.0.2`发布到npm，可以使用npm安装了，同时`browser-storage-apis`改名为`web-storage-apis`
 
-- 2019/09/16 添加版本信息
-- 2019/07/29 优化获取不到指定key的返回值为null
-- 2019/07/27 Frist commit
+- **2019/09/16** `0.0.1`添加版本信息
+- **2019/07/29** `0.0.1`优化获取不到指定key的返回值为null
+- **2019/07/27** `0.0.1`Frist commit
