@@ -9,6 +9,7 @@
   },
   "main": "dist/bundle.cjs.js",
   "scripts": {
+    "serve": "rollup -c --watch",
     "build": "rollup -c",
     "publish": "npm publish --access=public"
   },

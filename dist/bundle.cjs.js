@@ -3,8 +3,8 @@
  * @description Make localstorage and sessionStorage easy to use.
  * @author SunSeekerX
  * @time 2019年6月27日16点21分
- * @LastEditors SunSeekerX
- * @LastEditTime 2020-02-21 23:36:13
+ * @LastEditors: SunSeekerX
+ * @LastEditTime: 2020-04-22 21:44:53
  */
 
 /**
@@ -43,7 +43,7 @@ function setStorageSync(key, data, local) {
     const dataType = typeof data;
     const value = JSON.stringify({
       dataType,
-      data: data
+      data: data,
     });
     try {
       local
@@ -51,11 +51,11 @@ function setStorageSync(key, data, local) {
         : sessionStorage.setItem(key, value);
     } catch (error) {
       return {
-        errMsg: `setStorage:fail ${error}`
+        errMsg: `setStorage:fail ${error}`,
       }
     }
     return {
-      errMsg: 'setStorage:ok'
+      errMsg: 'setStorage:ok',
     }
   } else {
     throw new Error(`The key data type should be string instead of ${keyType}`)
@@ -96,7 +96,7 @@ function removeStorageSync(key, local) {
     // Remove data
     local ? localStorage.removeItem(key) : sessionStorage.removeItem(key);
     return {
-      errMsg: 'removeStorage:ok'
+      errMsg: 'removeStorage:ok',
     }
   } else {
     throw new Error(`The key data type should be string instead of ${keyType}`)
@@ -113,7 +113,7 @@ function clearStorageSync(local) {
   // Remove data
   local ? localStorage.clear() : sessionStorage.clear();
   return {
-    errMsg: 'clearStorage:ok'
+    errMsg: 'clearStorage:ok',
   }
 }
 
@@ -134,16 +134,26 @@ function getStorageInfoSync(local) {
   }
   return {
     keys,
-    errMsg: 'getStorageInfoSync:ok'
+    errMsg: 'getStorageInfoSync:ok',
   }
 }
+
+class Storage {
+  constructor() {
+    // localStorage不可用的时候是否使用cookie作为回退
+    usingCookie = true;
+  }
+}
+
+const storage = new Storage();
+console.log(storage.usingCookie);
 
 var index = {
   setStorageSync,
   getStorageSync,
   removeStorageSync,
   clearStorageSync,
-  getStorageInfoSync
+  getStorageInfoSync,
 };
 
 export default index;

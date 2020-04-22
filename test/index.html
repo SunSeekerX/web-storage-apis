@@ -1,32 +1,34 @@
 <!--
  * @name: 
  * @author: SunSeekerX
- * @time: 2020-02-21 21:26:28
+ * @Date: 2020-04-22 22:26:10
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-02-21 21:56:14
+ * @LastEditTime: 2020-04-22 22:29:02
  -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="../dist/bundle.cjs.js"></script>
+    <script src="./static/localforage.min.js"></script>
   </head>
   <body>
+    <h1>web-storage-apis test</h1>
     <script>
-      let flag
-      try {
-        flag =
-          window.Storage &&
-          window.localStorage &&
-          window.localStorage instanceof Storage
-      } catch (error) {
-        console.error(error.message)
-      }
+      console.log('localforage is: ', localforage)
 
-
-      console.log(flag);
+      localforage
+        .setItem('somekey', 'some value')
+        .then(function(value) {
+          // 当值被存储后，可执行其他操作
+          console.log(value)
+        })
+        .catch(function(err) {
+          // 当出错时，此处代码运行
+          console.log(err)
+        })
     </script>
   </body>
 </html>
