@@ -344,8 +344,6 @@ storage.setConfig({
 }
 ```
 
-### 
-
 ### setStorageSync(KEY,DATA[,LOCAL])
 
 > Storing the data in the key specified in the local cache overwrites the contents of the original key, which is a synchronization interface.
@@ -486,11 +484,9 @@ Recently, the background management project of the development company needs to 
   - Add debug
   - Add Store to cookie
   - Add custom config
-  - 加入存入到cookie功能
   - Added store data obfuscation(closed by default)
-  - 加入存入数据混淆功能
   - If `Storage` is not available, automatically switch to `Cookie` （`Storage` is not available in `safari` stealth mode）
-
+  
 - **2020-02-21** `0.0.2` 
   - Publish to npm
   - Rename `browser-storage-apis` to `web-storage-apis`
