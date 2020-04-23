@@ -4,7 +4,7 @@
  * @author SunSeekerX
  * @time 2019年6月27日16点21分
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-04-23 20:06:28
+ * @LastEditTime: 2020-04-23 22:52:22
  */
 
 import { error } from './core/log'
@@ -87,8 +87,8 @@ class StorageUtil {
       // 在localstorage无法使用的情况下是否使用cookie作为回退
       isUsingCookie: true,
       // 运行环境是否支持写入localStorage
-      isSupportStorage: _checklocalStorage(),
-      // isSupportStorage: false,
+      // isSupportStorage: _checklocalStorage(),
+      isSupportStorage: false,
       // 运行环境是否支持写入Cookie
       isSupportCookie: _checkCookie(),
       // isSupportCookie: false,
@@ -152,12 +152,18 @@ class StorageUtil {
       // 不支持localStorage但使用Cookie
       if (this._config.isSupportCookie) {
         // 不支持localStorage但使用Cookie，且支持写入Cookie 写入到Cookie
-        cookieSetItem(key, data, {
-          // 是否开启调试模式
-          debug: this._config.debug,
-          // 写入的数据是否可读
-          isReadable: this._config.isReadable,
-        })
+        cookieSetItem(
+          key,
+          data,
+          {
+            // 是否开启调试模式
+            debug: this._config.debug,
+            // 写入的数据是否可读
+            isReadable: this._config.isReadable,
+          },
+          // 是否在会话结束后删除 效果同存入sessionStorage
+          local
+        )
       } else {
         // 不支持写入Cookie
         _noStorageMethodError()

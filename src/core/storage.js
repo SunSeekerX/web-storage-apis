@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-23 10:48:27
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-04-23 17:29:07
+ * @LastEditTime: 2020-04-23 22:50:29
  */
 
 import { encrypt, unEncrypt } from './encrypt'
@@ -243,14 +243,15 @@ export function sessionClear(options) {
  * @param {String} key 本地缓存中的指定的 key
  * @param {Any} data 需要存储的内容，只支持原生类型、及能够通过 JSON.stringify 序列化的对象
  * @param { Object } options 处理数据选项
+ * @param { Boolean } local 是否在会话结束后删除 效果同存入sessionStorage
  */
-export function cookieSetItem(key, data, options) {
+export function cookieSetItem(key, data, options, local) {
   const keyType = typeof key
   if (keyType === 'string') {
     // 获取处理好的数据
     const { dataKey, dataValue } = _handleStoreData(key, data, options)
     // 存入数据
-    docCookies.setItem(dataKey, dataValue, Infinity)
+    docCookies.setItem(dataKey, dataValue, local ? Infinity : null)
   } else {
     _keyTypeError(keyType)
   }

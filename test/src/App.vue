@@ -157,6 +157,7 @@ export default {
   mounted() {
     // 初始化存储设置
     this.onChangeStorageConfig()
+    console.log(storage);
     this.storage = storage
   },
   methods: {
