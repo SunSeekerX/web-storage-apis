@@ -1,7 +1,7 @@
 {
   "name": "web-storage-apis",
   "description": "Make localstorage and sessionStorage easy to use.",
-  "version": "1.2.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/SunSeekerX/web-storage-apis",
   "repository": {
     "type": "git",
@@ -11,7 +11,8 @@
   "scripts": {
     "serve": "rollup -c --watch",
     "build": "rollup -c",
-    "publish": "npm publish --access=public"
+    "p": "npm publish --access=public",
+    "gnv": "npm version minor"
   },
   "author": "SunSeekerX",
   "license": "MIT",
