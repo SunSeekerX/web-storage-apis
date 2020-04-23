@@ -415,9 +415,9 @@ try {
 > Cleans up the local data cache synchronously.
 >
 
-| Arguments |  Type   | Default | Description                                              |
-| :-------: | :-----: | :-----: | :------------------------------------------------------- |
-|   local   | Boolean |  false  | clean data from localStorage ?<br />是否使用localStorage |
+| Arguments |  Type   | Default | Description                    |
+| :-------: | :-----: | :-----: | :----------------------------- |
+|   local   | Boolean |  false  | clean data from localStorage ? |
 
 ```javascript
 try {
