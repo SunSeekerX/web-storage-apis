@@ -4,7 +4,7 @@
  * @author SunSeekerX
  * @time 2019年6月27日16点21分
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-04-23 22:52:22
+ * @LastEditTime: 2020-04-23 23:15:40
  */
 
 import { error } from './core/log'
@@ -87,8 +87,8 @@ class StorageUtil {
       // 在localstorage无法使用的情况下是否使用cookie作为回退
       isUsingCookie: true,
       // 运行环境是否支持写入localStorage
-      // isSupportStorage: _checklocalStorage(),
-      isSupportStorage: false,
+      isSupportStorage: _checklocalStorage(),
+      // isSupportStorage: false,
       // 运行环境是否支持写入Cookie
       isSupportCookie: _checkCookie(),
       // isSupportCookie: false,
