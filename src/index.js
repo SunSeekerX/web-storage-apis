@@ -4,7 +4,7 @@
  * @author SunSeekerX
  * @time 2019年6月27日16点21分
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-04-23 17:34:29
+ * @LastEditTime: 2020-04-23 20:06:28
  */
 
 import { error } from './core/log'
@@ -94,7 +94,7 @@ class StorageUtil {
       // isSupportCookie: false,
 
       // 版本
-      version: '0.0.2',
+      version: '1.1.0',
     }
 
     // 传入生效的配置对象
