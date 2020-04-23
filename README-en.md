@@ -479,6 +479,10 @@ Recently, the background management project of the development company needs to 
 
 ## Changelog
 
+- **2020-04-23** `1.3.3`
+  - fix docs description
+  - fix if not support `Storage` using `Cookie` store data the expires always infinity
+
 - **2020-04-23** `1.0.0` 
   - Rebuild
   - Add debug
