@@ -471,7 +471,7 @@ Recently, the background management project of the development company needs to 
 
 
 
-## Use exampl gif
+## Use example gif
 
 ![example.gif](./example.gif)
 
